@@ -9,7 +9,7 @@ This README would normally document whatever steps are necessary to get your app
 ### How do I get set up? ###
 
 * npm install
-* npm run serve
+* npm run build
 
 ### Who do I talk to? ###
 
