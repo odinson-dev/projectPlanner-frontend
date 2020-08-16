@@ -16,7 +16,7 @@ new Vue({
   router,
   store,
   created () {
-    axios.get('http://localhost:3024/list/get')
+    axios.get('/list/get')
       .then(response => {
         store.state.board['columns'] = {}
         store.state.board.columns = response.data.message
