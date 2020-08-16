@@ -34,6 +34,7 @@
 import { mapState } from 'vuex'
 import BoardColumn from '@/components/BoardColumn'
 export default {
+  title: 'Trello Assignment',
   components: { BoardColumn },
   data () {
     return {
@@ -62,7 +63,7 @@ export default {
 
 <style lang="css">
 .board {
-  @apply p-4 bg-teal-dark h-full overflow-auto;
+  @apply p-4 bg-indigo-light h-full overflow-auto;
 }
 .task-bg {
   @apply pin absolute;

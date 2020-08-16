@@ -40,6 +40,7 @@ import AppDrag from './AppDrag'
 import AppDrop from './AppDrop'
 import movingTasksAndColumnsMixin from '@/mixins/movingTasksAndColumnsMixin'
 export default {
+  title: 'Trello Assignment',
   components: {
     ColumnTask,
     AppDrag,

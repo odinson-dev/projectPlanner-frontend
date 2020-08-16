@@ -25,7 +25,7 @@ export default new Vuex.Store({
   },
   mutations: {
     CREATE_TASK (state, { id, tasks, name }) {
-      axios.post('/task/create', { 'name': name, 'listId': id })
+      axios.post('http://localhost:3024/task/create', { 'name': name, 'listId': id })
         .then(response => {
           tasks.push({
             name,
@@ -38,7 +38,7 @@ export default new Vuex.Store({
         })
     },
     CREATE_COLUMN (state, { name, id }) {
-      axios.post('/list/create', { 'name': name })
+      axios.post('http://localhost:3024/list/create', { 'name': name })
         .then(response => {
           state.board.columns.push({
             name,
@@ -53,7 +53,7 @@ export default new Vuex.Store({
     UPDATE_TASK (state, { task, key, value }) {
       let jsonToSend = { 'id': task.id }
       jsonToSend[key] = value
-      axios.put('/task/update', jsonToSend)
+      axios.put('http://localhost:3024/task/update', jsonToSend)
         .then(response => {
           let responseData = response.data.message
           let column = state.columns.filter((item) => { return item.id === responseData.listId })
@@ -71,7 +71,7 @@ export default new Vuex.Store({
     },
     MOVE_TASK (state, { fromTasks, toTasks, fromTaskIndex, toTaskIndex, toColumnIndex }) {
       const taskToMove = fromTasks.splice(fromTaskIndex, 1)[0]
-      axios.put('/task/update', { id: taskToMove.id, listId: toColumnIndex })
+      axios.put('http://localhost:3024/task/update', { id: taskToMove.id, listId: toColumnIndex })
         .then(response => {
           toTasks.splice(toTaskIndex, 0, taskToMove)
         })

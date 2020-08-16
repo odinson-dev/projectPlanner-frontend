@@ -6,6 +6,9 @@ import router from './router'
 import store from './store'
 import AppButton from './components/AppButton'
 import axios from 'axios'
+import titleMixin from './mixins/titleMixin'
+
+Vue.mixin(titleMixin)
 
 Vue.component('AppButton', AppButton)
 Vue.use(Vuetify)
@@ -16,7 +19,7 @@ new Vue({
   router,
   store,
   created () {
-    axios.get('/list/get')
+    axios.get('http://localhost:3024/list/get')
       .then(response => {
         store.state.board['columns'] = {}
         store.state.board.columns = response.data.message

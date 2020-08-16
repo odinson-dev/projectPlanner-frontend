@@ -40,6 +40,7 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  title: 'Trello Assignment',
   computed: {
     ...mapGetters(['getTask']),
     task () {
